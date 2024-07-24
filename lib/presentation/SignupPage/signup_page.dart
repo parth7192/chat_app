@@ -49,69 +49,22 @@ class SignupPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        20,
-                      ),
+                      Radius.circular(20),
                     ),
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
+                    borderSide: BorderSide(color: Colors.black),
                   ),
                   errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(
-                      color: Colors.red,
-                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    borderSide: BorderSide(color: Colors.red),
                   ),
                   focusedErrorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
                     borderSide: BorderSide(
                       color: Colors.blue,
                     ),
                   ),
                   labelText: "First Name",
                   hintText: "Enter Your First Name",
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              //LASTNAME
-              TextFormField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(
-                      color: Colors.red,
-                    ),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        20,
-                      ),
-                    ),
-                    borderSide: BorderSide(
-                      color: Colors.blue,
-                    ),
-                  ),
-                  labelText: "Last Name",
-                  hintText: "Enter Your Last Name",
                 ),
               ),
               const SizedBox(
@@ -179,47 +132,16 @@ class SignupPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              //CONFIRM_PASS
-              TextFormField(
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(color: Colors.black),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(color: Colors.red),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(
-                      color: Colors.blue,
-                    ),
-                  ),
-                  labelText: "Confirm Password",
-                  hintText: "Enter Your Confirm Password",
-                ),
-              ),
-              const SizedBox(
-                height: 40,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
+                  OutlinedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.instance.login);
                     },
                     child: const Text("SignUp"),
                   ),
-                  ElevatedButton(
+                  OutlinedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.instance.guest);
                     },
