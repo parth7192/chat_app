@@ -8,6 +8,7 @@ class FireStoreService {
   FireStoreService._() {
     getUser();
   }
+
   static final FireStoreService instance = FireStoreService._();
 
   FirebaseFirestore fireStore = FirebaseFirestore.instance;
@@ -15,7 +16,7 @@ class FireStoreService {
   String collectionPath = "Todo";
   String userCollection = "allUsers";
 
-  late UserModel currentUser;
+  UserModel? currentUser;
 
   Future<void> addUser({required User user}) async {
     Map<String, dynamic> data = {

@@ -1,3 +1,4 @@
+import 'package:chat_app/presentation/FriendPage/friend_page.dart';
 import 'package:chat_app/presentation/GuestPage/guest_page.dart';
 import 'package:chat_app/presentation/HomePage/home_page.dart';
 import 'package:chat_app/presentation/LoginPage/login_page.dart';
@@ -11,11 +12,13 @@ class AppRoutes {
   String guest = 'guest';
   String signup = 'signup';
   String home = 'home';
+  String friend = 'friend';
 
   Map<String, WidgetBuilder> allRoutes = {
     '/': (context) => LoginPage(),
     'guest': (context) => const GuestPage(),
     'signup': (context) => SignupPage(),
     'home': (context) => const HomePage(),
+    'friend': (context) => const FriendPage()
   };
 }

@@ -13,20 +13,16 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.sizeOf(context);
-
     return Scaffold(
       body: Container(
+        height: double.infinity,
         width: double.infinity,
-        // decoration: BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.topCenter,
-        //     colors: [
-        //       Colors.orange.shade900,
-        //       Colors.orange.shade800,
-        //       Colors.orange.shade400,
-        //     ],
-        //   ),
-        // ),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/assets/back.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
@@ -41,153 +37,12 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                // TextFormField(
-                //   controller: emailController,
-                //   decoration: const InputDecoration(
-                //     border: OutlineInputBorder(
-                //       borderRadius: BorderRadius.all(
-                //         Radius.circular(20),
-                //       ),
-                //       borderSide: BorderSide(color: Colors.black),
-                //     ),
-                //     errorBorder: OutlineInputBorder(
-                //       borderRadius: BorderRadius.all(
-                //         Radius.circular(20),
-                //       ),
-                //       // borderSide: BorderSide(color: Colors.red),
-                //     ),
-                //     focusedErrorBorder: OutlineInputBorder(
-                //       borderRadius: BorderRadius.all(
-                //         Radius.circular(20),
-                //       ),
-                //       borderSide: BorderSide(
-                //         color: Colors.black,
-                //       ),
-                //     ),
-                //     labelText: "Email",
-                //   ),
-                // ),
-                // const SizedBox(
-                //   height: 20,
-                // ),
-                // TextFormField(
-                //   controller: passwordController,
-                //   decoration: const InputDecoration(
-                //       border: OutlineInputBorder(
-                //         borderRadius: BorderRadius.all(
-                //           Radius.circular(20),
-                //         ),
-                //         borderSide: BorderSide(
-                //           color: Colors.black,
-                //         ),
-                //       ),
-                //       errorBorder: OutlineInputBorder(
-                //         borderRadius: BorderRadius.all(
-                //           Radius.circular(20),
-                //         ),
-                //         // borderSide: BorderSide(color: Colors.red),
-                //       ),
-                //       focusedErrorBorder: OutlineInputBorder(
-                //         borderRadius: BorderRadius.all(
-                //           Radius.circular(
-                //             20,
-                //           ),
-                //         ),
-                //         borderSide: BorderSide(
-                //           color: Colors.black,
-                //         ),
-                //       ),
-                //       labelText: "Password"),
-                // ),
-                // const SizedBox(
-                //   height: 30,
-                // ),
-                // // const Divider(),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     const Text("Don't have an account?"),
-                //     TextButton(
-                //       onPressed: () {
-                //         Navigator.pushNamed(context, AppRoutes.instance.signup);
-                //       },
-                //       child: const Text(
-                //         "Signup",
-                //         style: TextStyle(
-                //           decoration: TextDecoration.underline,
-                //           decorationColor: Colors.black,
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
-                // OutlinedButton(
-                //   onPressed: () async {
-                //     User? user = await AuthService.instance.anonymousLogIn();
-                //
-                //     if (user != null) {
-                //       Navigator.of(context).pushReplacementNamed('home');
-                //     } else {
-                //       ScaffoldMessenger.of(context).showSnackBar(
-                //         const SnackBar(
-                //           content: Text("Login Failed"),
-                //           backgroundColor: Colors.red,
-                //           behavior: SnackBarBehavior.floating,
-                //         ),
-                //       );
-                //     }
-                //   },
-                //   child: const Text("Anonymous"),
-                // ),
-                // IconButton(
-                //   onPressed: () async {
-                //     UserCredential credential =
-                //         await AuthService.instance.signInWithGoogle();
-                //
-                //     User? user = credential.user;
-                //
-                //     if (user != null) {
-                //       await FireStoreService.instance.addUser(user: user);
-                //       await FireStoreService.instance.getUser();
-                //       Navigator.of(context).pushReplacementNamed('home');
-                //     }
-                //   },
-                //   icon: const Icon(Icons.g_mobiledata),
-                // ),
-                // OutlinedButton(
-                //   onPressed: () async {
-                //     User? user = await AuthService.instance.signIn(
-                //       email: emailController.text,
-                //       psw: passwordController.text,
-                //     );
-                //     if (user != null) {
-                //       await FireStoreService.instance.getUser();
-                //       ScaffoldMessenger.of(context).showSnackBar(
-                //         const SnackBar(
-                //           content: Text("Login Success"),
-                //           backgroundColor: Colors.green,
-                //           behavior: SnackBarBehavior.floating,
-                //         ),
-                //       );
-                //       Navigator.of(context).pushReplacementNamed('home');
-                //     } else {
-                //       ScaffoldMessenger.of(context).showSnackBar(
-                //         const SnackBar(
-                //           content: Text("Login Failed"),
-                //           backgroundColor: Colors.red,
-                //           behavior: SnackBarBehavior.floating,
-                //         ),
-                //       );
-                //     }
-                //   },
-                //   child: const Text("Sign IN"),
-                // ),
                 TextFormField(
                   controller: emailController,
                   decoration: const InputDecoration(
@@ -195,11 +50,16 @@ class LoginPage extends StatelessWidget {
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
-                      borderSide: BorderSide(color: Colors.black),
+                      borderSide: BorderSide(color: Colors.white),
                     ),
-                    icon: Icon(Icons.email),
+                    icon: Icon(
+                      Icons.email,
+                      color: Colors.white,
+                    ),
                     labelText: "Email",
                     hintText: "Enter Your Email",
+                    hintStyle: TextStyle(color: Colors.white),
+                    labelStyle: TextStyle(color: Colors.white),
                   ),
                 ),
                 const SizedBox(
@@ -212,27 +72,34 @@ class LoginPage extends StatelessWidget {
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
-                      borderSide: BorderSide(color: Colors.black),
+                      borderSide: BorderSide(color: Colors.white),
                     ),
-                    icon: Icon(Icons.password),
+                    icon: Icon(
+                      Icons.password,
+                      color: Colors.white,
+                    ),
                     labelText: "Password",
                     hintText: "Enter Your Password",
+                    hintStyle: TextStyle(color: Colors.white),
+                    labelStyle: TextStyle(color: Colors.white),
                   ),
                 ),
-
                 const SizedBox(
                   height: 25,
                 ),
                 const Divider(
                   thickness: 2,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
                       "Don't have an account?",
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                      ),
                     ),
                     TextButton(
                       onPressed: () {
@@ -241,14 +108,18 @@ class LoginPage extends StatelessWidget {
                       child: const Text(
                         "Signup",
                         style: TextStyle(
+                          color: Colors.blue,
                           decoration: TextDecoration.underline,
-                          decorationColor: Colors.black,
+                          decorationColor: Colors.white,
                         ),
                       ),
                     ),
                   ],
                 ),
-                OutlinedButton(
+                const SizedBox(
+                  width: 20,
+                ),
+                ElevatedButton(
                   onPressed: () async {
                     User? user = await AuthService.instance.anonymousLogIn();
 
@@ -275,7 +146,6 @@ class LoginPage extends StatelessWidget {
                       email: emailController.text,
                       password: passwordController.text,
                     );
-
                     if (user != null) {
                       await FireStoreService.instance.addUser(user: user);
                       await FireStoreService.instance.getUser();
@@ -299,7 +169,6 @@ class LoginPage extends StatelessWidget {
                       email: emailController.text,
                       psw: passwordController.text,
                     );
-
                     if (user != null) {
                       await FireStoreService.instance.getUser();
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -323,19 +192,50 @@ class LoginPage extends StatelessWidget {
                   child: const Text("email-pass Sign In"),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
-                IconButton(
-                  onPressed: () {
-                    AuthService.instance.signInWithGoogle().then(
-                          (value) => Navigator.of(context)
-                              .pushReplacementNamed('home'),
-                        );
-                  },
-                  icon: const ImageIcon(
-                    AssetImage("lib/assets/google.png"),
-                    size: 30,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        AuthService.instance.signInWithGoogle().then(
+                              (value) => Navigator.of(context)
+                                  .pushReplacementNamed('home'),
+                            );
+                      },
+                      icon: Padding(
+                        padding: const EdgeInsets.only(),
+                        child: Image.asset(
+                          "lib/assets/google.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Padding(
+                        padding: const EdgeInsets.only(),
+                        child: Image.asset(
+                          "lib/assets/micro.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Padding(
+                        padding: const EdgeInsets.only(),
+                        child: Image.asset(
+                          "lib/assets/facebook.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
