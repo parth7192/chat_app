@@ -20,13 +20,6 @@
 - Dart SDK: Comes with Flutter installation
 - Android Studio or Visual Studio Code: Recommended IDEs for Flutter development
 
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/chatapp.git
-
-
 <img src = "https://github.com/user-attachments/assets/8b1e8592-67c3-4f71-a612-1d630e73d53c" width = "200">
 
 <img src = "https://github.com/user-attachments/assets/4d4f097a-0eb5-42e0-a718-b755f6c5acaa" width = "200">
